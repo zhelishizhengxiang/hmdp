@@ -33,4 +33,4 @@ build/
 .vscode/
 
 # 开发环境配置文件
-hm-dianping/src/main/resources/application-dev.yml
+/src/main/resources/application-dev.yml
