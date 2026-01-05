@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# 开发环境配置文件
+hm-dianping/src/main/ressources/application-dev.yaml

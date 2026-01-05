@@ -3,15 +3,18 @@ server:
 spring:
   application:
     name: hmdp
+  profiles:
+    active: dev
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.95.100:3306/hmdp?useSSL=false&serverTimezone=UTC
-    username: root
-    password: 046977zx
+    driver-class-name: ${dev.datasource.driver-class-name}
+    url: jdbc:mysql://${dev.datasource.host}:${dev.datasource.port}/${dev.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: ${dev.datasource.username}
+    password: ${dev.datasource.password}
   redis:
-    host: 192.168.95.100
-    port: 6379
-    password: 046977Zx
+    host: ${dev.redis.host}
+    port: ${dev.redis.port}
+    password: ${dev.redis.password}
+    database: ${dev.redis.database}
     lettuce:
       pool:
         max-active: 10
